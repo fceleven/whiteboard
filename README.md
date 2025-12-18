@@ -220,7 +220,7 @@ cp backend/.env.example backend/.env
 PORT=3000
 NODE_ENV=development
 DATABASE_PATH=./db.sqlite
-FRONTEND_URL=http://localhost:5174
+FRONTEND_URL=http://localhost:5173
 TYPEORM_SYNCHRONIZE=true
 TYPEORM_LOGGING=true
 ```
@@ -257,9 +257,9 @@ npm run dev:frontend
 
 #### 5️⃣ 访问应用
 
-- **会议管理**: http://localhost:5174/
-- **人员管理**: http://localhost:5174/users
-- **大屏展示**: http://localhost:5174/display
+- **会议管理**: http://localhost:5173/
+- **人员管理**: http://localhost:5173/users
+- **大屏展示**: http://localhost:5173/display
 - **API 接口**: http://localhost:3000/api
 
 ---
@@ -493,7 +493,7 @@ chmod +x /var/www/eboard/backup.sh
 
 展示模式是专门为大屏幕显示设计的全屏页面，具有现代化视觉设计和自动刷新功能。
 
-**访问路径**: `/display`（例如：`http://localhost:5174/display`）
+**访问路径**: `/display`（例如：`http://localhost:5173/display`）
 
 ### 显示周末设置
 
