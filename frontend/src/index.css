@@ -1,0 +1,214 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#root {
+  width: 100%;
+  min-height: 100vh;
+}
+
+/* 大屏展示页面深色主题样式 */
+.ant-table-dark .ant-table {
+  background-color: #2a2a2a;
+  color: #fff;
+}
+
+.ant-table-dark .ant-table-thead > tr > th {
+  background-color: #1a1a1a;
+  color: #fff;
+  border-color: #444;
+}
+
+.ant-table-dark .ant-table-tbody > tr > td {
+  background-color: #2a2a2a;
+  color: #fff;
+  border-color: #444;
+}
+
+.ant-table-dark .ant-table-tbody > tr:hover > td {
+  background-color: #333;
+}
+
+.ant-table-dark .ant-table-cell {
+  border-color: #444;
+}
+
+/* 响应式表格 */
+.ant-table-wrapper {
+  width: 100%;
+}
+
+.ant-table {
+  width: 100%;
+}
+
+/* 确保表格固定布局下的列宽一致 */
+.ant-table-fixed {
+  table-layout: fixed;
+}
+
+/* 日期列不换行 */
+.ant-table-cell {
+  word-wrap: break-word;
+  word-break: break-word;
+}
+
+.ant-table-cell:first-child {
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+/* 时间单元格内容不溢出 */
+.ant-table-tbody > tr > td {
+  padding: 0 !important;
+  vertical-align: top;
+}
+
+.ant-table-thead > tr > th {
+  text-align: center;
+}
+
+/* 拖拽覆盖层 z-index - 确保在所有内容之上 */
+[data-dnd-overlay] {
+  z-index: 10000 !important;
+}
+
+/* 拖拽中的元素样式 */
+body[style*="cursor: grabbing"] {
+  cursor: grabbing !important;
+}
+
+/* 编辑按钮区域光标为 pointer，不受拖拽影响 */
+.edit-button-wrapper {
+  cursor: pointer !important;
+}
+
+.edit-button-wrapper * {
+  cursor: pointer !important;
+}
+
+/* 展示模式专用样式 */
+.display-mode .ant-table {
+  background: transparent !important;
+  height: 100% !important;
+}
+
+.display-mode .ant-table-container {
+  height: 100% !important;
+}
+
+.display-mode .ant-table-content {
+  height: 100% !important;
+}
+
+.display-mode table {
+  height: 100% !important;
+}
+
+.display-mode .ant-table-thead > tr > th {
+  background: rgba(0, 0, 0, 0.3) !important;
+  border-color: rgba(255, 255, 255, 0.1) !important;
+  padding: 8px !important;
+}
+
+.display-mode .ant-table-tbody {
+  height: 100% !important;
+}
+
+/* 工作日模式（5天）- 每行占 20% */
+.display-mode.weekday-mode .ant-table-tbody > tr {
+  height: 20% !important;
+}
+
+/* 周末模式（7天）- 每行占 14.28% (100/7) */
+.display-mode.weekend-mode .ant-table-tbody > tr {
+  height: 14.28% !important;
+}
+
+
+.display-mode .ant-table-tbody > tr > td {
+  background: transparent !important;
+  border-color: rgba(255, 255, 255, 0.1) !important;
+  padding: 0 !important;
+  height: 100% !important;
+  vertical-align: middle !important;
+}
+
+.display-mode .ant-table-tbody > tr:hover > td {
+  background: transparent !important;
+}
+
+/* 展示模式滚动条样式 */
+.display-mode ::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+.display-mode ::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+}
+
+.display-mode ::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 4px;
+}
+
+.display-mode ::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.5);
+}
+
+/* 会议管理页面表格自适应 */
+.ant-table-wrapper .ant-table {
+  height: 100% !important;
+}
+
+.ant-table-wrapper .ant-table-container {
+  height: 100% !important;
+}
+
+.ant-table-wrapper .ant-table-content {
+  height: 100% !important;
+}
+
+.ant-table-wrapper .ant-table-body {
+  height: 100% !important;
+  overflow: visible !important;
+}
+
+/* 管理页面的表格行自适应高度，确保有最小高度 */
+.ant-table-tbody > tr {
+  height: auto !important;
+  min-height: 120px;
+}
+
+/* 管理页面单元格滚动条美化 */
+.ant-table-tbody > tr > td ::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+.ant-table-tbody > tr > td ::-webkit-scrollbar-track {
+  background: #f0f0f0;
+  border-radius: 3px;
+}
+
+.ant-table-tbody > tr > td ::-webkit-scrollbar-thumb {
+  background: #d9d9d9;
+  border-radius: 3px;
+}
+
+.ant-table-tbody > tr > td ::-webkit-scrollbar-thumb:hover {
+  background: #bfbfbf;
+}
+
