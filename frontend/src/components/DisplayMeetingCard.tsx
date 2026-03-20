@@ -59,12 +59,12 @@ const DisplayMeetingCard: React.FC<DisplayMeetingCardProps> = ({ meeting, users 
     <div
       style={{
         backgroundColor: 'rgba(255, 255, 255, 0.08)',
+        backgroundColor: '#2a2a2a', // 安卓降级方案
         border: `2px solid ${statusConfig.borderColor}`,
         borderRadius: 8,
         padding: '10px 14px',
         marginBottom: 8,
         position: 'relative',
-        backdropFilter: 'blur(10px)',
         transition: 'all 0.3s ease',
         boxShadow: `0 2px 8px rgba(0, 0, 0, 0.15)`,
       }}

@@ -15,6 +15,15 @@ body {
 #root {
   width: 100%;
   min-height: 100vh;
+  min-height: -webkit-fill-available; /* 适配移动端 */
+}
+
+/* 安卓平板大屏优化 */
+.display-page-container {
+  width: 100vw;
+  height: 100vh;
+  height: -webkit-fill-available; /* 安卓 Chrome 支持 */
+  overflow: hidden;
 }
 
 /* 大屏展示页面深色主题样式 */
@@ -63,6 +72,35 @@ body {
   word-break: break-word;
 }
 
+/* 安卓平板优化：禁用硬件加速可能导致渲染问题的元素 */
+@supports (-webkit-appearance: none) {
+  .display-mode .ant-table {
+    transform: translateZ(0); /* 启用硬件加速 */
+    will-change: transform;
+  }
+}
+
+/* 移动端/平板优化 */
+@media (max-width: 1024px) {
+  .display-mode .ant-table-thead > tr > th {
+    font-size: 14px !important;
+  }
+
+  .display-mode .ant-table-tbody > tr > td {
+    font-size: 12px !important;
+  }
+}
+
+/* 强制表格单元格正确渲染 */
+.display-mode table,
+.display-mode tbody,
+.display-mode thead,
+.display-mode tr,
+.display-mode th,
+.display-mode td {
+  box-sizing: border-box;
+}
+
 .ant-table-cell:first-child {
   white-space: nowrap;
   overflow: hidden;
@@ -103,20 +141,10 @@ body[style*="cursor: grabbing"] {
   height: 100% !important;
 }
 
-.display-mode .ant-table-container {
-  height: 100% !important;
-}
-
-.display-mode .ant-table-content {
-  height: 100% !important;
-}
-
-.display-mode table {
-  height: 100% !important;
-}
-
+/* 安卓平板兼容：移除 backdrop-filter 或使用降级方案 */
 .display-mode .ant-table-thead > tr > th {
   background: rgba(0, 0, 0, 0.3) !important;
+  background: #1a1a1a !important; /* 安卓降级方案 */
   border-color: rgba(255, 255, 255, 0.1) !important;
   padding: 8px !important;
 }

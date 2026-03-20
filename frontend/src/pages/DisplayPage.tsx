@@ -192,24 +192,27 @@ const DisplayPage: React.FC = () => {
 
   return (
     <div
+      className="display-page-container"
       style={{
         padding: 20,
         background: 'linear-gradient(135deg, #1e3c72 0%, #2a5298 50%, #1e3c72 100%)',
         color: '#fff',
         height: '100vh',
+        height: '100dvh', // 动态视口高度，适配移动端
         display: 'flex',
         flexDirection: 'column',
         overflow: 'hidden',
+        WebkitOverflowScrolling: 'touch', // iOS 平滑滚动
       }}
     >
-      <div style={{ 
-        marginBottom: 16, 
-        textAlign: 'center', 
+      <div style={{
+        marginBottom: 16,
+        textAlign: 'center',
         flexShrink: 0,
         background: 'rgba(255, 255, 255, 0.05)',
+        background: '#1a1a1a', // 安卓降级方案
         padding: '12px 20px',
         borderRadius: '8px',
-        backdropFilter: 'blur(10px)',
       }}>
         <h1 style={{ 
           fontSize: 32, 
@@ -237,6 +240,7 @@ const DisplayPage: React.FC = () => {
           bordered
           loading={loading}
           tableLayout="fixed"
+          scroll={{ x: true, y: '100%' }} // 安卓平板滚动支持
           style={{
             width: '100%',
             height: '100%',
